@@ -1,0 +1,24 @@
+id: 20241030112641
+title: Test 2 für #003: RTE muss Absätze entfernen können
+role: test
+syntax: zmk
+created: 20241030112641
+modified: 20241030121236
+precursor: 20241030112600
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Klicken Sie in die Zeile mit dem Absatz und klicken Sie erneut auf "Absatz" und ei vorhandene Leerzeile zu löschen.
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob der Absatz gelöscht wurde. 
+
+**Erwartetes Ergebnis:**
+* De Absatz wird nach dem erneuten öffnen nicht mehr.

@@ -1,0 +1,25 @@
+id: 20241030112200
+title: Test 1 für #002: RTE muss Fußnoten erstellen können
+role: test
+syntax: zmk
+created: 20241030112255
+modified: 20241030120806
+precursor: 20241030110700
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Klicken Sie auf den Button "Fußnoten" und geben Sie die gewünschte Zahl ein. 
+* Fügen Sie den gewünschten Text der Fußnote hinzu. (1TextInDerFußnote)
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob Fußnoten hinzugefügt wurden. 
+
+**Erwartetes Ergebnis:**
+* Die Fußnoten werden nach dem erneuten öffnen korrekt angezeigt.

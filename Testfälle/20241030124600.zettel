@@ -1,0 +1,17 @@
+id: 20241030124600
+title: Anforderungen
+role: sammlung
+syntax: zmk
+created: 20241030124647
+modified: 20241030125213
+
+Alle Tests:
+[[RTE muss Transklusion ermöglichen #1| 20241030111100]]
+[[RTE muss Fußnoten erstellen können #2| 20241030112200]]
+[[RTE muss Absätze einbetten können #3| 20241030112600]]
+[[RTE muss Textformatierung ermöglichen #4| 20241030113200]]
+[[RTE muss Bearbeitung zulassen #5| 20241030122700]]
+[[Überprüfung der wörtlichen Formatierung #6| 20241030123400]]
+[[Muss verlinkungen zulasen #7| 20241030123700]]
+[[Muss Transklusion ermöglichen #8| 20241030124100]] 
+[[RTE muss Rückgängig-/Wiederherstellen Funktionen für Formatierung umsetzen #10| 20241030124300]]

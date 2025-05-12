@@ -1,0 +1,17 @@
+id: 20241030123200
+title: Test 4 für #005: RTE muss Bearbeitungen zulassen
+role: test
+syntax: zmk
+created: 20241030123247
+precursor: 20241030122700
+
+**Testfall: Kopieren-Funktion im RTE**
+
+**Ausgangssituation:**
+* Der RTE ist geöffnet, und der Text „Dies ist ein Test“ wurde in den Editor eingegeben. 
+
+**Eingabe:**
+* Markieren Sie den gesamten Text „Dies ist ein Test“. Danach wählen Sie die Kopieren-Funktion (Strg+C oder über das Menü). 
+
+**Erwartetes Ergebnis:**
+* Der Text bleibt im Editor bestehen und wird in die Zwischenablage kopiert. Der Inhalt in der Zwischenablage lautet „Dies ist ein Test“.

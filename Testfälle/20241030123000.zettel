@@ -1,0 +1,18 @@
+id: 20241030123000
+title: Test 2 für #005: RTE muss Bearbeitungen zulassen
+role: test
+syntax: zmk
+created: 20241030123020
+precursor: 20241030122700
+
+**Testfall: Einfügen-Funktion im RTE**
+
+**Ausgangssituation:**
+* Der Text „Dies ist ein Test“ wurde in die Zwischenablage kopiert. 
+
+
+**Eingabe:**
+* Positionieren Sie den Cursor an eine leere Stelle im Dokument und verwenden Sie die Einfügen-Funktion (Strg+V oder über das Menü). 
+
+**Erwartetes Ergebnis:** 
+* Der Text „Dies ist ein Test“ erscheint an der Stelle, an der der Cursor platziert wurde.

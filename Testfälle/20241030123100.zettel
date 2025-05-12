@@ -1,0 +1,19 @@
+id: 20241030123100
+title: Test 3 für #005: RTE muss Bearbeitungen zulassen
+role: test
+syntax: zmk
+created: 20241030123140
+modified: 20241030123149
+precursor: 20241030122700
+
+**Testfall: Rückgängig-Funktion im RTE**
+
+**Ausgangssituation:** 
+* Der RTE ist geöffnet, und der Text „Dies ist ein Test“ wurde in den Editor eingegeben. 
+
+**Eingabe:**
+* Fügen Sie am Ende des bestehenden Textes eine zusätzliche Zeile ein, z. B. „Zusätzlicher Text“. 
+* Wählen Sie die Rückgängig-Funktion (Strg+Z oder über das Menü). 
+
+**Erwartetes Ergebnis:**
+* Die letzte Bearbeitungsaktion („Zusätzlicher Text“ hinzufügen) wird rückgängig gemacht, und der Text im Editor zeigt nur „Dies ist ein Test“ ohne die zusätzliche Zeile.

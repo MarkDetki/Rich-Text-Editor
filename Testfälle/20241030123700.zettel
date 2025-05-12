@@ -1,0 +1,26 @@
+id: 20241030123700
+title: Test 1 für #007: RTE muss Verlinkungen zulassen
+role: test
+syntax: zmk
+created: 20241030123716
+precursor: 20241030110700
+
+**Ausgangssituation** 
+
+* Der Benutzer hat Zugriff auf den Zettelstore Rich-Text-Editor. 
+* Es existiert ein Zettel, wo man Verlinkungen zulassen kann. 
+
+**Testschritte** 
+
+* Öffnen des Editors: 
+* Öffnen Sie den Rich-Text-Editor und rufen Sie einen vorhandenen Zettel zur Bearbeitung auf oder erstellen Sie einen neuen Zettel. 
+* Erstellen einer internen Verlinkung: 
+* Schreiben Sie einen Textabschnitt, zum Beispiel: „Weitere Informationen finden Sie hier.“ 
+* Markieren Sie das Wort „hier“ und wählen Sie die Funktion zum Hinzufügen eines Links. 
+* Geben Sie die URL eines bestehenden Zettels im Zettelstore ein (z.B., „zettelstore.com/zettel123“). 
+* Erstellen einer externen Verlinkung: 
+* Markieren Sie einen weiteren Textabschnitt, z.B., „externer Link“ und fügen Sie eine externe URL hinzu, wie z.B. „https://example.com“. 
+* Überprüfung der Funktionalität der Links: 
+* Speichern Sie den Zettel und schließen Sie den Editor. 
+* Öffnen Sie den Zettel erneut und klicken Sie auf beide Links (interner und externer). 
+* Erwartetes Ergebnis: Beide Links funktionieren und führen korrekt zur angegebenen internen bzw. externen Seite.

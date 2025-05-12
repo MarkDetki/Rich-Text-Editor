@@ -1,0 +1,25 @@
+id: 20241030113200
+title: Test 1 für #004: RTE muss Textformatierungen ermöglichen
+role: test
+syntax: zmk
+created: 20241030113241
+modified: 20241030122258
+precursor: 20241030110700
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Klicken Sie auf den Button "italic Text" um die Formatierung __ Text __ hinzuzufügen.
+* Geben Sie den gewünschten Text zwischen die Formatierung ein.
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob der der gewünschte Text in neuer Formatierung angezeigt wird. 
+
+**Erwartetes Ergebnis:**
+* Die Formatierung wird nach dem erneuten öffnen korrekt angezeigt.

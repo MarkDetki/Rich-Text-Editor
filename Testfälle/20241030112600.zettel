@@ -1,0 +1,24 @@
+id: 20241030112600
+title: Test 1 für #003: RTE muss Absätze einbetten können
+role: test
+syntax: zmk
+created: 20241030112611
+modified: 20241030121243
+precursor: 20241030110700
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Klicken Sie auf den Button "Absatz" um eine Leerzeile hinzuzufügen.
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob der Absatz hinzugefügt wurde. 
+
+**Erwartetes Ergebnis:**
+* De Absatz wird nach dem erneuten öffnen korrekt angezeigt.

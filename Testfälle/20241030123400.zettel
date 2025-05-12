@@ -1,0 +1,28 @@
+id: 20241030123400
+title: Test 1 für #006: Überprüfung der wörtlichen Formatierung von Texten im Rich-Text-Editor
+role: test
+syntax: zmk
+created: 20241030123446
+precursor: 20241030110700
+
+**Ausgangssituation** 
+
+* Der Benutzer hat Zugriff auf den Zettelstore Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen. 
+* Die Testperson hat Grundkenntnisse in Textformatierungen und dem Rich-Text-Editor. 
+
+**Testschritte**
+
+* Öffnen des Editors: 
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitet werden kann. 
+* Eingabe von Text und Auswahl der Formatierungen: 
+* Schreiben Sie einen Beispieltext (z.B. „Dies ist ein Test für Fettschrift, Kursivschrift, und Unterstreichung“). 
+* Markieren Sie Teile des Textes und wenden Sie die Formatierungen an: 
+* Fettschrift auf „Fettschrift“. 
+* Kursivschrift auf „Kursivschrift“. 
+* Unterstreichung auf „Unterstreichung“. 
+* Überprüfung der Darstellung: 
+* Stellen Sie sicher, dass die angewendeten Formatierungen sofort sichtbar sind und dem Standard für Textformatierung entsprechen: 
+* Speichern und Überprüfen der Formatierungen: 
+* Speichern Sie den Zettel und schließen Sie den Editor. 
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob die Formatierungen erhalten geblieben sind. 
+* Erwartetes Ergebnis: Alle angewendeten Formatierungen bleiben nach dem Speichern und erneuten Öffnen erhalten und werden korrekt dargestellt.

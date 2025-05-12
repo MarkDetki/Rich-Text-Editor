@@ -1,0 +1,26 @@
+id: 20241030111400
+title: Test 2 für #001: RTE muss Transklusion bearbeiten und entfernen
+role: test
+syntax: zmk
+created: 20241030111445
+modified: 20241030120303
+precursor: 20241030111100
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Markieren Sie die Transklusion die entfernt werden soll.
+* Klicken Sie auf den Button "Transklusion" um die Formatierung {{}} zu entfernen. 
+* Löschen Sie die eingefügte Zettel ID des anderen Zettels.
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob die Transklusion noch vorhanden ist.
+
+**Erwartetes Ergebnis:**
+* Die Transklusion soll nichtmehr vorhanden sein.

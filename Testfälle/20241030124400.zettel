@@ -1,0 +1,18 @@
+id: 20241030124400
+title: Test 2 für #010: RTE muss Rückgängig-/Wiederherstellen Funktion für Formatierung umsetzen
+role: test
+syntax: zmk
+created: 20241030124413
+modified: 20241030125231
+precursor: 20241030124300
+
+**Testfall: Wiederherstellen einer Formatierungsänderung (Kursiv) im Rich-Text-Editor**
+
+**Ausgangssituation:** 
+* Der RTE ist geöffnet, und der Text „Dies ist eine Anmerkung“ wurde in den Editor eingegeben. Die Formatierung „Kursiv“ wurde auf „Anmerkung“ angewendet und anschließend mit der Rückgängig-Funktion entfernt. 
+
+**Eingabe:**
+* Wählen Sie die Wiederherstellen Tastenkombination Strg+Y. 
+
+**Erwartetes Ergebnis:**
+* Die kursiv formatierte Darstellung des Wortes „Anmerkung“ wird wiederhergestellt, und der Text erscheint erneut kursiv. Die Wiederherstellen-Funktion hat die rückgängig gemachte Formatierung korrekt wiederhergestellt.

@@ -1,0 +1,20 @@
+id: 20241030124100
+title: Test 1 für #008: RTE muss Transklusion ermöglichen
+role: test
+syntax: zmk
+created: 20241030124137
+precursor: 20241030110700
+
+**Testfall: Transklusion im RTE**
+
+**Ausgangssituation:** 
+* Der RTE ist geöffnet, und ein Beispieltext „Hauptinhalt des Dokuments“ wurde in den Editor eingegeben.
+ 
+**Eingabe:** 
+* Positionieren Sie den Cursor an die Stelle im Text, an der die Transklusion eingefügt werden soll. 
+* Wählen Sie über das Menü die Funktion für „Transklusion einfügen“ im RTE 
+* Wählen Sie die gewünschte Transklusion (z. B. eine externe Datei, einen Textbaustein oder ein Bild). 
+* Bestätigen Sie die Auswahl, um die Transklusion einzufügen. 
+
+**Erwartetes Ergebnis:**
+* Die Transklusion wird an der markierten Stelle im Text eingefügt und ist klar als erweiternder Inhalt dargestellt. Der eingefügte Inhalt ist sichtbar und wirkt wie ein nahtloser Teil des Dokuments, mit einer optischen Abgrenzung, falls dies für den RTE vorgesehen ist.

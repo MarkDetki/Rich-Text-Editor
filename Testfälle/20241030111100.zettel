@@ -1,0 +1,25 @@
+id: 20241030111100
+title: Test 1 für #001: RTE muss Transklusion ermöglichen
+role: test
+syntax: zmk
+created: 20241030111128
+modified: 20241030120034
+precursor: 20241030110700
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Klicken Sie auf den Button "Transklusion" um die Formatierung {{}} hinzuzufügen. 
+* Fügen Sie in die geschweiften Klammern die Zettel ID des gewünschten Zettels ein.
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob die Transklusion erfolgreich war. 
+
+**Erwartetes Ergebnis:**
+* Die Transklusion wird nach dem erneuten öffnen korrekt angezeigt

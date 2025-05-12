@@ -1,0 +1,18 @@
+id: 20241030122700
+title: Test 1 für #005: RTE muss Bearbeitungen zulassen
+role: zettel
+syntax: zmk
+created: 20241030122738
+modified: 20241030122814
+precursor: 20241030110700
+
+**Testfall: Ausschneiden-Funktion im RTE **
+
+**Ausgangssituation:** 
+* Der RTE ist geöffnet, und der Text „Dies ist ein Test“ wurde bereits in den Editor eingegeben. 
+
+**Eingabe:**
+* Markieren Sie den Text „Dies ist ein Test“. Danach wählen Sie die Ausschneiden-Funktion aus (Strg+X oder über das Menü). 
+
+**Erwartetes Ergebnis: **
+* Der markierte Text wird aus dem Editor entfernt und in die Zwischenablage kopiert. Der Editor zeigt nun einen leeren Bereich anstelle des ausgeschnittenen Textes.

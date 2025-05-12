@@ -1,0 +1,21 @@
+id: 20241030124300
+title: Test 1 für #010: RTE muss Rückgängig-/Wiederherstellen Funktion für Formatierung umsetzen
+role: test
+syntax: zmk
+created: 20241030124313
+modified: 20241030125223
+precursor: 20241030110700
+
+**Testfall: Rückgängig machen einer Formatierungsänderung (Fett) im RTE**
+
+**Ausgangssituation:**
+* Der RTE ist geöffnet, und der Text „Dies ist ein wichtiger Hinweis“ wurde in den Editor eingegeben. 
+
+**Eingabe:** 
+* Markieren Sie den Text „wichtiger Hinweis“ im Editor. 
+* Wählen Sie die Formatierung „Fett“ (über das Menü oder die Schaltfläche). 
+* Stellen Sie sicher, dass die Formatierung erfolgreich angewendet wurde (der Text erscheint fett). 
+* Wählen Sie die Tastenkombination Strg+Z.
+ 
+**Erwartetes Ergebnis:** 
+* Die fettgedruckte Formatierung für „wichtiger Hinweis“ wird entfernt und der Text kehrt zu seiner normalen Darstellung zurück. Die Rückgängig-Funktion hat die letzte Formatierungsänderung korrekt zurückgesetzt.

@@ -1,0 +1,27 @@
+id: 20241030112500
+title: Test 2 für #002: RTE muss Fußnoten bearbeiten und entfernen können
+role: test
+syntax: zmk
+created: 20241030112529
+modified: 20241030120859
+precursor: 20241030112200
+
+**Ausgangssituation:**
+* Der Benutzter hat Zugriff auf den Rich-Text-Editor und kann einen neuen oder vorhandenen Zettel öffnen und bearbeiten.
+* Die Testperson hat Grundkenntnisse in Textformatierung und dem Rich-Text-Editor.
+* Die Testperson hat Schreib- und Bearbeitungsrechte für Zettel, um Inhalte hinzuzufügen und zu verändern.
+
+**Testschritte:**
+* Öffnen Sie den Rich-Text-Editor und erstellen Sie einen neuen Zettel oder öffnen Sie einen bestehenden, der bearbeitete werden kann.
+* Markieren Sie die gewünschte Fußnote und klicken Sie auf den Button "Fußnoten" um die Formatierung der Fußnote zu entfernen.
+* Löschen Sie den geschriebenen Text der Fußnote.
+
+* Bearbeiten Sie die Zahl oder den Text wie gewünscht.
+
+* Speichern Sie den Zettel und schließen sie den Editor.
+
+**Überprüfung:**
+* Öffnen Sie den Zettel erneut und überprüfen Sie, ob die Fußnoten entfernt oder verändert wurden.
+
+**Erwartetes Ergebnis:**
+* Die Fußnoten werden nach dem erneuten öffnen nicht mehr oder mit neuen Daten angezeigt.
