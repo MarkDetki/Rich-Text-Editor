@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="favicon.svg"
+        >
+        <title>Rich Text Editor</title>
+        <link rel="stylesheet" href="scss/styles.scss">
+        <script type="module" src="js/app.js"></script>
+    </head>
+
+    <body class="d-flex align-items-center justify-content-center min-vh-100">
+
+        <div class="rich-text-editor container w-75">
+            <div class="bg-light toolbar d-flex flex-wrap gap-1 border border-2 rounded-top p-3">
+
+                <!-- Heading -->
+                <div
+                    class="dropdown"
+                    data-bs-toggle="tooltip"
+                    title="Überschrift"
+                >
+                    <button
+                        class="btn btn-light dropdown-toggle h-100"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i class="bi bi-type-h1"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li id="heading-h1" class="dropdown-item"><i class="bi bi-type-h1"></i></li>
+                        <li id="heading-h2" class="dropdown-item"><i class="bi bi-type-h2"></i></li>
+                        <li id="heading-h3" class="dropdown-item"><i class="bi bi-type-h3"></i></li>
+                        <li id="heading-h4" class="dropdown-item"><i class="bi bi-type-h4"></i></li>
+                        <li id="heading-h5" class="dropdown-item"><i class="bi bi-type-h5"></i></li>
+                    </ul>
+                </div>
+
+                <!-- Text formatting -->
+                <button
+                    class="btn btn-light italic"
+                    data-bs-toggle="tooltip"
+                    title="Kursiv"
+                >
+                    <i class="bi bi-type-italic"></i>
+                </button>
+
+                <button
+                    class="btn btn-light bold"
+                    data-bs-toggle="tooltip"
+                    title="Fett"
+                >
+                    <i class="bi bi-type-bold"></i>
+                </button>
+
+                <button
+                    class="btn btn-light quote"
+                    data-bs-toggle="tooltip"
+                    title="Zitat"
+                >
+                    <i class="bi bi-quote"></i>
+                </button>
+
+                <button
+                    class="btn btn-light marked"
+                    data-bs-toggle="tooltip"
+                    title="Markieren"
+                >
+                    <i class="bi bi-highlighter"></i>
+                </button>
+
+                <!-- Text editing -->
+                <button
+                    class="btn btn-light inserted"
+                    data-bs-toggle="tooltip"
+                    title="Unterstreichen"
+                >
+                    <i class="bi bi-type-underline"></i>
+                </button>
+
+                <button
+                    class="btn btn-light strikeTrough"
+                    data-bs-toggle="tooltip"
+                    title="Durchstreichen"
+                >
+                    <i class="bi bi-type-strikethrough"></i>
+                </button>
+
+                <!-- Superscript, Subscript -->
+                <button
+                    class="btn btn-light superscript"
+                    data-bs-toggle="tooltip"
+                    title="Hochgestellt"
+                >
+                    <i class="bi bi-superscript"></i>
+                </button>
+
+                <button
+                    class="btn btn-light subscript"
+                    data-bs-toggle="tooltip"
+                    title="Tiefgestellt"
+                >
+                    <i class="bi bi-subscript"></i>
+                </button>
+
+                <!-- Horizontal Rule -->
+                <button
+                    id="horizontalRule"
+                    class="btn btn-light d-flex"
+                    data-bs-toggle="tooltip"
+                    title="Horizontal Rule / Thematic Break"
+                >
+                    ---
+                </button>
+
+                <div
+                    class="dropdown"
+                    data-bs-toggle="tooltip"
+                    title="Listen"
+                >
+                    <button
+                        class="btn btn-light dropdown-toggle h-100"
+                        type="button"
+                        aria-expanded="false"
+                        data-bs-toggle="dropdown"
+                    >
+                        <i class="bi bi-list-ul"></i>
+                    </button>
+                    <div class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li>
+                                <button class="dropdown-item unordered-list" type="button"><i class="bi bi-list-ul"></i>
+                                    Ungeordnete Liste
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item ordered-list" type="button"><i class="bi bi-list-ol"></i>
+                                    Nummerierte Liste
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item definition-list" type="button"><i class="bi bi-list-columns-reverse"></i> Definitionsliste
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="vr"></div>
+
+                <!-- Text literal formatting -->
+                <button
+                    class="btn btn-light entered font-monospace"
+                    data-bs-toggle="tooltip"
+                    title="Computer input"
+                >
+                    In
+                </button>
+
+                <button
+                    class="btn btn-light source_code"
+                    data-bs-toggle="tooltip"
+                    title="Source code"
+                >
+                    <i class="bi bi-code-slash"></i>
+                </button>
+
+                <button
+                    class="btn btn-light text_output font-monospace"
+                    data-bs-toggle="tooltip"
+                    title="Computer output"
+                >
+                    Out
+                </button>
+
+
+                <div class="vr"></div>
+
+                <!-- Link to other zettel -->
+                <button
+                    class="btn btn-light createLink p-0"
+                    data-bs-toggle="modal"
+                    data-bs-target="#createZettelstoreLink"
+                >
+                    <span
+                        class="d-block btn"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        title="Interne oder externe Links einfügen"
+                    >
+                        <i class="bi bi-link-45deg"></i>
+                    </span>
+                </button>
+
+                <!-- Embed Image -->
+                <button
+                    class="btn btn-light embedImageDialogToggle p-0"
+                    data-bs-toggle="modal"
+                    data-bs-target="#embedImageModal"
+                >
+                    <span
+                        class="d-block btn"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        title="Bild einfügen"
+                    >
+                        <i class="bi bi-image"></i>
+                    </span>
+                </button>
+
+                <!-- Transclusion -->
+                <button
+                    class="btn btn-light d-flex createTransclusion align-items-center"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#createZettelstoreTransclusion"
+                >
+                    <i class="transclusion-icon"></i>
+                </button>
+                <!-- Footnote -->
+                <button
+                    id="footnote"
+                    class="btn btn-light py-0"
+                    data-bs-toggle="tooltip"
+                    title="Fußnote"
+                >
+                    <i class="bi bi-chat-right-quote"></i>
+                </button>
+
+                <!-- Special characters/entities -->
+
+                <div
+                    class="dropdown"
+                    data-bs-toggle="tooltip"
+                    title="Special Characters"
+                >
+                    <button
+                        class="btn btn-light dropdown-toggle h-100"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        &#128522;
+                    </button>
+                    <div class="dropdown-menu emoji-dropdown scrollable-dropdown">
+                        <p class="mx-3 my-1">
+                            <a
+                                class="text-body-secondary link-opacity-75 link-underline-secondary link-underline-opacity-0 link-underline-opacity-75-hover"
+                                href="https://html.spec.whatwg.org/multipage/named-characters.html"
+                                target="_blank"
+                            >Mehr</a>
+                            <i class="text-body-secondary bi bi-info-circle"></i>
+                        </p>
+                        <!-- Emoji-Liste -->
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div
+                    class="dropdown"
+                    title="Tabelle"
+                    data-bs-toggle="tooltip"
+                >
+                    <button
+                        id="insert-table-button"
+                        class="btn btn-light dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i class="bi bi-table"></i>
+                    </button>
+                    <div class="dropdown-menu p-2">
+                        <div id="table-dimensions" class="table-dimensions">1x1 Tabelle</div>
+
+                        <div class="grid-container createTableDialog">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vr"></div>
+
+                <!-- Undo/ Redo -->
+                <div class="btn-group">
+                    <button
+                        id="undo"
+                        class="btn btn-light undo d-flex align-items-center"
+                        data-bs-toggle="tooltip"
+                        title="Rückgängig machen"
+                    >
+                        <img
+                            src="assets/undo.svg"
+                            width="16"
+                            height="21"
+                            alt="Undo"
+                        >
+                    </button>
+                    <button
+                        id="redo"
+                        class="btn btn-light redo d-flex align-items-center"
+                        data-bs-toggle="tooltip"
+                        title="Wiederholen (Eingabe)"
+                    >
+                        <img
+                            src="assets/redo.svg"
+                            width="16"
+                            height="21"
+                            alt="Undo"
+                        >
+                    </button>
+                </div>
+
+                <!-- Copy Zettelmarkup-->
+                <button
+                    id="copyContent"
+                    class="btn btn-light d-flex"
+                    data-bs-toggle="tooltip"
+                    title="Kopiert den Inhalt"
+                >
+                    <i class="bi bi-clipboard"></i>
+                    <i class="bi bi-clipboard-check-fill d-none"></i>
+                </button>
+
+                <!-- Fullscreen -->
+                <button
+                    id="fullscreen"
+                    class="btn btn-light d-flex"
+                    data-bs-toggle="tooltip"
+                    title="Vollbildmodus"
+                >
+                    <i class="bi bi-arrows-fullscreen"></i>
+                    <i class="bi bi-fullscreen-exit d-none"></i>
+                </button>
+            </div>
+            <div class="border border-2 border-top-0 rounded-bottom">
+                <label for="editor-input" class="form-label d-none">Zettel Text</label>
+                <textarea class="form-control min-vh-65 border-0" id="editor-input"></textarea>
+            </div>
+
+            <div
+                class="modal fade"
+                id="createZettelstoreLink"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="staticBackdropLabel">Link einfügen</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <form
+                                class="needs-validation"
+                                novalidate
+                                id="createZettelForm"
+                            >
+                                <div class="mb-3">
+                                    <label for="linkText" class="form-label">Angezeigter Text</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="linkText"
+                                            required
+                                        >
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie einen anzuzeigenden Text ein.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            role="switch"
+                                            id="externalRessource"
+                                        >
+                                        <label class="form-check-label" for="externalRessource">Externer Link</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="searchByZettelName" class="form-label">Name/ID eines Zettels oder Link</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="searchByZettelName"
+                                            placeholder="Suche einen Zettel..."
+                                            required
+                                        >
+                                        <div class="invalid-feedback">
+                                            Link/ID ist Ungültig
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="searchSuggestions" class="suggestions-container">
+
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    id="createLinkButton"
+                                >Einfügen
+                                </button>
+                                <button
+                                    style="background: #3B666B"
+                                    type="button"
+                                    class="btn btn-danger"
+                                    data-bs-dismiss="modal"
+                                >
+                                    Abbrechen
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="modal fade"
+                id="embedImageModal"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="embedImageModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered min-vw-75">
+                    <div class="modal-content min-vh-50">
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="embedImageModalLabel">Bild einfügen</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="imageAltText">Alternative Text</label>
+                            <input
+                                id="imageAltText"
+                                type="text"
+                                class="form-control mb-3"
+                            >
+                            <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 image-gallery">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="modal fade"
+                id="createZettelstoreTransclusion"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="createZettelstoreTransclusionLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content min-vh-50">
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="createZettelstoreTransclusionLabel">Transklusion</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <form
+                                class="needs-validation"
+                                novalidate
+                                id="createZettelTransclusionForm"
+                            >
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="transclusion-mode"
+                                        id="inline-mode-transclusion"
+                                        value="inline"
+                                        checked
+                                    >
+                                    <label class="form-check-label" for="inline-mode-transclusion">
+                                        Inline-Mode
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="transclusion-mode"
+                                        id="query-transclusion"
+                                        value="query"
+                                    >
+                                    <label class="form-check-label" for="query-transclusion">
+                                        Query
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="transclusion-mode"
+                                        id="complete-transclusion"
+                                        value="complete"
+                                    >
+                                    <label class="form-check-label" for="complete-transclusion">
+                                        Complete
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="searchByZettelNameTransclusion" class="form-label">Name/ID eines Zettels oder Link</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="searchByZettelNameTransclusion"
+                                            name="zettel-id"
+                                            placeholder="Suche einen Zettel..."
+                                            required
+                                        >
+                                        <div class="invalid-feedback">
+                                            Link/ID ist Ungültig
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="transclusionFragmentIdentifier" class="form-label">Fragment identifier (Optional)</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="transclusionFragmentIdentifier"
+                                            name="fragment-id"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="transclusionSearchQuery" class="form-label">Query</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="transclusionSearchQuery"
+                                            name="search-query"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+                                <div id="searchSuggestionsTransclusion" class="suggestions-container">
+
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    id="createTransclusionButton"
+                                >Einfügen
+                                </button>
+                                <button
+                                    style="background: #3B666B"
+                                    type="button"
+                                    class="btn btn-danger"
+                                    data-bs-dismiss="modal"
+                                >
+                                    Abbrechen
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="modal fade"
+                id="zettelPreviewModal"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="zettelPreviewLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="zettelPreviewLabel">Zettel Vorschau</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Content goes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toast-container position-fixed top-2 end-2">
+
+            </div>
+        </div>
+    </body>
+</html>
