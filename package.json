@@ -1,0 +1,26 @@
+{
+  "name": "zettelstore-rich-text-editor",
+  "description": "Der Rich Text Editor soll es einem Benutzer erleichtern Zettelmarkup zu schreiben",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build --emptyOutDir",
+    "lint": "npx eslint --fix src"
+  },
+  "dependencies": {
+    "@popperjs/core": "2.11.8",
+    "axios": "^1.7.9",
+    "bootstrap": "5.3.3",
+    "bootstrap-icons": "1.11.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@html-eslint/eslint-plugin": "^0.31.1",
+    "@html-eslint/parser": "^0.31.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.14.0",
+    "sass": "1.32.13",
+    "vite": "5.4.11"
+  }
+}
